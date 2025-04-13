@@ -45,9 +45,12 @@ public class Main {
 
                     totalInterestRate = (monthlyPayment * numberOfMonths) - principal;
 
-                    System.out.printf("The Monthly payment is: $%.2f", monthlyPayment);
+                    System.out.printf("\nThe Monthly payment is: $%.2f", monthlyPayment);
                     System.out.println();
                     System.out.printf("The Interest payment paid over " + loanLength + " years is $%.2f", totalInterestRate);
+                    System.out.println();
+                    System.out.print("\nEnter the choice if you want to use a new Calculator or to exit: ");
+                    input = scanner.nextInt();
 
                     break;
                 case 2:
@@ -59,13 +62,13 @@ public class Main {
                     double cdTotalInterestEarned;
 
 
-                    System.out.print("Please enter the deposit amount:");
+                    System.out.print("Please enter the deposit amount: ");
                     deposit = scanner.nextDouble();
 
-                    System.out.print("Please enter the cd interest rate: (ex. 1.75)");
+                    System.out.print("Please enter the cd interest rate (ex. 1.75): ");
                     cdInterestRate = scanner.nextFloat();
 
-                    System.out.print("Please enter the number of years you would like to invest:");
+                    System.out.print("Please enter the number of years you would like to invest: ");
                     years = scanner.nextInt();
 
                     //FV = P × (1 + (r / 365))^(365 × t)
@@ -75,9 +78,12 @@ public class Main {
                     futureValue = deposit * Math.pow((1 + (cdAnnualRate / 365)), (365 * years));
                     cdTotalInterestEarned = futureValue - deposit;
 
-                    System.out.printf("The total future amount would be: $%.2f", futureValue);
+                    System.out.printf("\nThe total future amount would be: $%.2f", futureValue);
                     System.out.println();
                     System.out.printf("Over the course of %d years you would have earned $%.2f in interest", years, cdTotalInterestEarned);
+                    System.out.println();
+                    System.out.print("\nEnter the choice if you want to use a new Calculator or to exit: ");
+                    input = scanner.nextInt();
 
                     break;
                 case 3:
@@ -103,8 +109,12 @@ public class Main {
                     //per pay period is every month not year so we need to find the interest rate per month
 
                     annuity = monthlyPayout * ((1 - (1/ Math.pow(1 + expectedmonthlyRate, yearsPayout*12))) /expectedmonthlyRate);
-                    System.out.printf("To fund an annuity that pays %.2f monthly for %d years and earns an expected %.3f percent interest,\n", monthlyPayout, yearsPayout, expectedInterestRate);
+                    System.out.printf("\nTo fund an annuity that pays %.2f monthly for %d years and earns an expected %.3f percent interest,\n", monthlyPayout, yearsPayout, expectedInterestRate);
                     System.out.printf("you would need to invest $%.2f", annuity);
+                    System.out.println();
+                    System.out.print("\nEnter the choice if you want to use a new Calculator or to exit: ");
+                    input = scanner.nextInt();
+
 
                     break;
                 default:
