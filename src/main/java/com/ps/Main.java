@@ -3,7 +3,9 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        switch(){
+        boolean meow = true;
+        int test = scanner.nextInt();
+        switch(test){
             case 1:
                 int loanLength;
                 float interest;
@@ -44,7 +46,7 @@ public class Main {
                 int years;
                 double cdAnnualRate;
                 double futureValue;
-                double cdTotalInterest;
+                double cdTotalInterestEarned;
 
 
                 System.out.println("Please enter the deposit amount:");
@@ -60,10 +62,12 @@ public class Main {
 
                 cdAnnualRate = cdInterestRate/100;
 
-                futureValue = deposit * Math.pow((1 +(cdAnnualRate/365)), 365 * years));
+                futureValue = deposit * Math.pow((1 +(cdAnnualRate/365)), (365 * years));
+                cdTotalInterestEarned = futureValue - deposit;
 
-
-
+                System.out.printf("The total future amount would be: $%.2f", futureValue);
+                System.out.println();
+                System.out.printf("Over the course of %d years you would have earned $%.2f in interest", years, cdTotalInterestEarned);
 
                 break;
             default:
