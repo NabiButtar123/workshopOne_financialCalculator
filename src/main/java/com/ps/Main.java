@@ -119,6 +119,8 @@ public class Main {
                     break;
                 default:
                     System.out.println("invalid input");
+                    System.out.println("Please try again");
+                    input = scanner.nextInt();
             }
         }
         System.out.println("Thank you for using this Calculator have a great day");
